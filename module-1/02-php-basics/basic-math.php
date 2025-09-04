@@ -13,7 +13,32 @@
     <section class="row min-vh-100 align-items-center justify-content-center">
         <div class="col-lg-8">
             <h1 class="display-5 mb-4">Basic Arithmetic</h1>
-            
+              <?php
+                //We'll set up our variables here
+
+                $num1 = 7;
+                $num2 = 6;
+
+                //Addition
+                $num3 = $num1 + $num2;
+                echo "<p>The sum of $num1 and $num2 is $num3</p>";
+
+                //Subtraction
+                $num3 = $num1 - $num2;
+                echo "<p>$num2 taken away from $num1 is $num3</p>";
+
+                //Multiplication
+                $num3 = $num1 * $num2;
+                echo "<p>The product of $num1 and $num2 is $num3</p>";
+
+                //Division
+                $num3 = $num1 / $num2;
+                echo "<p>The quotient of $num1 and $num2 is $num3</p>";
+
+                //Exponentation
+                $num3 = $num1 ** $num2;
+                echo "<p>$num1 raised to the $num2 power is $num3</p>";
+              ?>
             <a href="index.php" class="btn btn-outline-primary">Return to Table of Contents</a>
         </div>
     </section>
