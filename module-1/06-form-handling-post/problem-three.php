@@ -18,17 +18,27 @@
 </form>
 <?php
     if(isset($_POST['submit'])) {
-        echo "balls";
         if($text === '') {
             $message = "<p>Please submit a string</p>";
         } else if(is_string($text)) {
+
             $vowel_count = 0;
+            $y_count = 0;
+            $contains_y = false;
             foreach(str_split($text) as $ch) {
                 if(in_array($ch, $vowels, true)) {
                     $vowel_count++;
+                } else if($ch === 'y') {
+                    $contains_y = true;
+                    $y_count++;
                 }
             }
-            $message = "<p>This sentence has $vowel_count vowels</p>";
+            if($vowel_count > 0){
+                $message = "<p>This sentence has $vowel_count vowels</p>";
+            } else if ($contains_y) {
+                $message = "<p>This sentence has $y_count vowels, and only the letter y</p>";
+            }
+
         } else {
             $message = "<p>Please submit a string</p>";
         }
