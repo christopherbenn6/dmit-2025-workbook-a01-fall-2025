@@ -5,8 +5,38 @@
 -- All queries have a certain order to them. This one, which you'll complete with your instructor, creates a table, defines all of its columns, and determines which data type each column will be. We also have to decide whether a column allows null data and what the primary key is. 
 
 CREATE TABLE cities (
-    
+    `cid` SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `city_name` VARCHAR(36) NOT NULL,
+    `province` ENUM('AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK', 'NT', 'NU', 'YT') NOT NULL,
+    `population` MEDIUMINT UNSIGNED NOT NULL,
+    `is_capital` BOOLEAN NOT NULL DEFAULT FALSE,
+    `trivia` VARCHAR(255) NULL
 );
+ /*
+    Numberical values can be SIGNED or UNSIGNED
+    SIGNED: Positive or Negative
+    UNSIGNED: 0 or Positive
+
+    TINYINT
+        - 1 byte
+        - Signed Range: -128 - 127
+        - Unsigned Range: 0 - 255
+    SMALLINT
+        - 2 bytes
+        - Signed Range: -32,768 - 32,767
+        - Unsigned Range: 0 - 65,535
+    MEDIUMINT
+        - 3 bytes
+        - Signed Range: -8,388,608 - 8,388,607
+        - Unsigned Range: 0 - 255
+    INT
+        - 4 bytes
+        - Signed Range: -2,147,483,648 - 2,147,483,647
+        - Unsigned Range: 0 - 255
+    BIGINT
+        - 8 bytes
+        - Range: FUCKING HUGE
+ */
 
 /*
     In this statement:
