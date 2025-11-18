@@ -1,11 +1,3 @@
-<?php
-
-session_start();
-require_once dirname(__DIR__, 4) . '/data/connect.php';
-$connection = db_connect();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +5,21 @@ $connection = db_connect();
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?php echo $title; ?></title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     </head>
 
     <body class="container p-3">
         <header class="text-center my-5">
             <!-- Navigation will go here. -->
+            <nav>
+                <a href="index.php" class="btn btn-dark">Home</a>
+                <?php if(isset($_SESSION['user_id'])) : ?>
+                    <a href="admin.php" class="btn btn-outline-secondary">Admin</a>
+                    <a href="logout.php" class="btn btn-outline-success">Log Out</a>
+                <?php else : ?>
+                    <a href="login.php" class="btn btn-outline-success">Log In</a>
+                <?php endif; ?>
+            </nav>
         </header>
         <main class="my-5">
             <!-- Introduction -->
